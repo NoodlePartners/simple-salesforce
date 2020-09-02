@@ -160,6 +160,8 @@ class Salesforce:
                 domain=self.domain)
 
         elif all(arg is not None for arg in (
+                username, consumer_key, privatekey_file_contents)) or \
+            all(arg is not None for arg in (
                 username, consumer_key, privatekey_file)):
             self.auth_type = "jwt-bearer"
 

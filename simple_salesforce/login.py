@@ -155,7 +155,7 @@ def SalesforceLogin(
             username=username, password=password, client_id=client_id)
     elif username is not None and \
             consumer_key is not None and \
-            privatekey_file is not None:
+            (privatekey_file is not None or privatekey_file_contents is not None):
         header = {'alg': 'RS256'}
         expiration = datetime.utcnow() + timedelta(minutes=3)
         payload = {
